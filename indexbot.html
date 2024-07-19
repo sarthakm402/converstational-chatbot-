@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .chat-box {
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .user-message {
+            float: right;
+            clear: both;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 70%;
+            margin-bottom: 5px;
+        }
+
+        .bot-response {
+            float: left;
+            clear: both;
+            background-color: #f0f0f0;
+            color: #333;
+            border-radius: 10px;
+            padding: 10px;
+            max-width: 70%;
+            margin-bottom: 5px;
+        }
+
+        .chat-form {
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .chat-form input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .chat-form input[type="submit"] {
+            width: 70px;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .chat-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1 style="text-align: center;">Chat with Bot</h1>
+        
+        <div class="chat-history">
+            {% if history %}
+                {% for i in range(history|length) %}
+                    <div class="chat-box">
+                        <div class="user-message">{{ history[i] }}</div>
+                        <div class="bot-response">{{ response_hist[i][0]['generated_text']}}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <form class="chat-form" method="POST">
+            <input type="text" name="message" placeholder="Type your message here..." required autocomplete="off">
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</body>
+</html>
+
