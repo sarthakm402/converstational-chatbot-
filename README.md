@@ -1,7 +1,7 @@
 
 # Conversational Chatbot
 
-Welcome to the repository for a powerful chatbot application built using LangChain, Hugging Face, Flask, and Transformers. This project demonstrates how to create a chatbot that leverages advanced NLP models to provide meaningful and interactive responses.
+Welcome to the repository for a powerful chatbot application built using LangChain, Hugging Face, Flask, and Transformers. This project demonstrates how to create a chatbot that leverages advanced NLP models to provide meaningful and interactive response.
 
 ## Overview
 
